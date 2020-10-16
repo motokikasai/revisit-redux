@@ -1,10 +1,10 @@
-// import React from 'react';
+import { combineReducers } from 'redux';
 
 const initialState = {
   count: 0,
 };
 
-const rootReducer = (state = initialState, action) => {
+const countReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return {
@@ -18,5 +18,14 @@ const rootReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+// const todoReducer = (state = 0, action) => {
+//   return 0;
+// };
+
+const rootReducer = combineReducers({
+  countReducer,
+  //   todoReducer,
+});
 
 export default rootReducer;

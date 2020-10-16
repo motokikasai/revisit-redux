@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Buttons extends React.Component {
+class Buttons extends Component {
   handleIncrement = () => {
     this.props.dispatch({ type: 'INCREMENT' });
   };
@@ -55,7 +55,7 @@ class Buttons extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  count: state.count,
+  count: state.countReducer.count, // combineReducer must be taken into account!
 });
 
 export default connect(mapStateToProps)(Buttons);
