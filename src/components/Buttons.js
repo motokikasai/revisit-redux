@@ -31,6 +31,7 @@ class Buttons extends Component {
             display: 'inline-block',
             fontSize: '2rem',
             fontWeight: '600',
+            color: '#5a2e08',
             width: '100px',
           }}
         >
