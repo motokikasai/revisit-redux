@@ -19,9 +19,16 @@ const countReducer = (state = initialState, action) => {
   }
 };
 
-// const todoReducer = (state = 0, action) => {
-//   return 0;
-// };
+const { SHOW_ALL } = VisibilityFilters;
+
+function visibilityFiler(state = SHOW_ALL, action) {
+  switch (action.type) {
+    case SET_VISIBILITY_FILTER:
+      return action.filter;
+    default:
+      return state;
+  }
+}
 
 const rootReducer = combineReducers({
   countReducer,
